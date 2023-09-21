@@ -1,0 +1,41 @@
+using System.Drawing;
+using System.Windows.Forms;
+
+Form scherm = new Form();
+scherm.Text = "Mandelbrot";
+scherm.BackColor = Color.White;
+scherm.ClientSize = new Size(400,600);
+
+Bitmap Mandelbrot = new Bitmap(200,400);
+
+Label askX1 =  new Label();
+TextBox askX2 = new TextBox();
+Label askY1 = new Label();
+TextBox askY2 = new TextBox(); 
+Button Calculate = new Button();
+
+scherm.Controls.Add(askX1);
+scherm.Controls.Add(askX2);
+scherm.Controls.Add(askY1);
+scherm.Controls.Add(askY2);
+scherm.Controls.Add(Calculate);
+
+askX1.Text = "X-Coördinaat";
+askX1.Location = new Point(50, 20);
+askX2.Location = new Point(150, 20);
+askY1.Text = "Y-Coördinaat";
+askY1.Location = new Point(50, 50);
+askY2.Location = new Point(150, 50);
+Calculate.Text = "Bereken";
+Calculate.Location = new Point(150, 90);
+
+Label MandelBrotSet = new Label();
+scherm.Controls.Add(MandelBrotSet);
+MandelBrotSet.Location = new Point(50, 150);
+MandelBrotSet.Size = new Size(300, 300);
+MandelBrotSet.BackColor = Color.Yellow;
+MandelBrotSet.Image = Mandelbrot;
+
+
+
+Application.Run(scherm);
